@@ -36,13 +36,23 @@ export function ChatWidget() {
         role: m.role === "user" ? "user" : "assistant",
         content: m.text,
       }))
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, system: SYSTEM_PROMPT, messages: history }),
-      })
+const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer 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", // ta clé OpenRouter ici
+  },
+  body: JSON.stringify({
+    model: "anthropic/claude-sonnet-4-5",
+    max_tokens: 1000,
+    messages: [
+      { role: "system", content: SYSTEM_PROMPT },
+      ...history
+    ],
+  }),
+})
       const data = await response.json()
-      const botText = data.content?.[0]?.text ?? "Désolé, je n'ai pas pu répondre."
+      const botText = data.choices?.[0]?.message?.content ?? "Désolé, je n'ai pas pu répondre."
       setMessages((prev) => [...prev, { role: "bot", text: botText }])
     } catch {
       setMessages((prev) => [...prev, { role: "bot", text: "Une erreur est survenue. Veuillez réessayer." }])
