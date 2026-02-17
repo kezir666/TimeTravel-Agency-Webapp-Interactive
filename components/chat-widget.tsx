@@ -43,7 +43,7 @@ const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     "Authorization": "Bearer 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", // ta clé OpenRouter ici
   },
   body: JSON.stringify({
-    model: "gpt-oss-20b",
+    model: "openai/gpt-oss-20b:free",
     max_tokens: 1000,
     messages: [
       { role: "system", content: SYSTEM_PROMPT },
