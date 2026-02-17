@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { ShieldCheck, Gem, BookOpen } from "lucide-react"
+import { getAssetPath } from "@/lib/paths"
 
 const features = [
   {
@@ -47,8 +48,8 @@ export function AboutSection() {
           {/* Right: Decorative Image */}
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
             <Image
-              src="/images/about-visual.jpg"
-              alt="Illustration abstraite d'un sablier dor\u00e9 dans l'espace"
+              src={getAssetPath('/images/about-visual.jpg')}
+              alt="Illustration abstraite d'un sablier doré dans l'espace"
               fill
               className="object-cover"
             />

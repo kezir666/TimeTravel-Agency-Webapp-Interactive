@@ -11,6 +11,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import type { Destination } from "@/components/destinations-section"
 import { Sparkles, Shield, Lightbulb, CreditCard } from "lucide-react"
+import { getAssetPath } from "@/lib/paths"
 
 interface DestinationModalProps {
   destination: Destination | null
@@ -26,7 +27,7 @@ export function DestinationModal({ destination, onClose }: DestinationModalProps
         {/* Header Image */}
         <div className="relative w-full aspect-[21/9]">
           <Image
-            src={destination.image}
+            src={getAssetPath(destination.image)}
             alt={destination.name}
             fill
             className="object-cover"

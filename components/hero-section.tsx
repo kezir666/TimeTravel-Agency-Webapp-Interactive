@@ -2,13 +2,14 @@
 
 import { ArrowDown } from "lucide-react"
 import Image from "next/image"
+import { getAssetPath } from "@/lib/paths"
 
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/hero-bg.jpg"
+        src={getAssetPath('/images/hero-bg.jpg')}
         alt=""
         fill
         className="object-cover"

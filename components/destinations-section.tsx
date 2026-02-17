@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Clock, AlertTriangle, Banknote } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { DestinationModal } from "@/components/destination-modal"
+import { getAssetPath } from "@/lib/paths"
 
 export type Destination = {
   id: string
@@ -151,7 +152,7 @@ export function DestinationsSection() {
                 {/* Image */}
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
-                    src={dest.image}
+                    src={getAssetPath(dest.image)}
                     alt={`Destination ${dest.name}`}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
