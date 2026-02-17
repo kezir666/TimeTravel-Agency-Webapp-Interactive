@@ -2,9 +2,15 @@
 TimeTravel Agency : Webapp Interactive
 
 Frederic CHAPOT
+
 Matéo NICOUD
+
 Noé CHATAGNEAU
+
 Arthur LACOMBE
+
+
+Lien github pages: https://kezir666.github.io/TimeTravel-Agency-Webapp-Interactive/
 
 Exercice 1.1 — Définition des fonctionnalités (Features clés)
 ✅ MUST HAVE (Essentielles)
